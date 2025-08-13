@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>趣味小游戏</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            padding-top: 50px;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        button {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 10px;
+        }
+        button:hover {
+            background: #ff8e8e;
+            transform: scale(1.05);
+        }
+        .hidden {
+            display: none;
+        }
+        #flower {
+            font-size: 60px;
+            margin: 20px;
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🤗 朋友小测试 🤗</h1>
+    <p>点击按钮看看今天的小惊喜</p>
+
+    <button onclick="showMessage()">点我看看</button>
+
+    <div id="message" class="hidden">
+        <div id="flower">🌼</div>
+        <h2>你是傻逼！</h2>
+        <p>去你妈</p>
+        <button onclick="resetGame()">再玩一次</button>
+    </div>
+</div>
+
+<script>
+    function showMessage() {
+        document.getElementById('message').classList.remove('hidden');
+    }
+
+    function resetGame() {
+        document.getElementById('message').classList.add('hidden');
+    }
+</script>
+</body>
+</html>
